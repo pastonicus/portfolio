@@ -3,7 +3,7 @@ backend:
   repo: https://github.com/pastonicus/portfolio
   branch: main
   auth_type: implicit
-  open_authoring: true
+  open_authoring: false
 
 site_url: /admin
 publish_mode: editorial_workflow
