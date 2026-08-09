@@ -1,9 +1,9 @@
 backend:
   name: github
-  repo: your-org/your-repo
+  repo: https://github.com/pastonicus/portfolio
   branch: main
   auth_type: implicit
-  open_authoring: false
+  open_authoring: true
 
 site_url: /admin
 publish_mode: editorial_workflow
