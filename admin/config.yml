@@ -1,0 +1,71 @@
+backend:
+  name: github
+  repo: your-org/your-repo
+  branch: main
+  auth_type: implicit
+  open_authoring: false
+
+site_url: /admin
+publish_mode: editorial_workflow
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+logo_url: "/images/logo.svg"
+
+collections:
+  - name: profile
+    label: Profile
+    folder: content/profile
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Bio", name: "bio", widget: "markdown"}
+
+  - name: caseStudies
+    label: Case Studies
+    folder: content/case-studies
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Metrics", name: "metrics", widget: "text"}
+      - {label: "Image Path", name: "image", widget: "image"}
+      - {label: "Role", name: "role", widget: "string"}
+      - {label: "Process", name: "process", widget: "text"}
+      - {label: "Solution", name: "solution", widget: "text"}
+      - {label: "Impact", name: "impact", widget: "text"}
+
+  - name: articles
+    label: Articles
+    folder: content/articles
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", widget: "text"}
+      - {label: "Link", name: "link", widget: "string"}
+      - {label: "Hero Image", name: "heroImage", widget: "image"}
+
+  - name: testimonials
+    label: Testimonials
+    folder: content/testimonials
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Quote", name: "quote", widget: "text"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Role", name: "role", widget: "string"}
+      - {label: "LinkedIn Link", name: "linkedin", widget: "string"}
+
+  - name: wands
+    label: Creative Process
+    folder: content/wands
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Concept", name: "concept", widget: "string"}
+      - {label: "Materials", name: "materials", widget: "string"}
+      - {label: "Time", name: "time", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
