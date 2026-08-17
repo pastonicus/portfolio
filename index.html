@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/space-grotesk@latest/400.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/space-grotesk@latest/500.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/space-grotesk@latest/700.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/jetbrains-mono@latest/400.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/jetbrains-mono@latest/500.css">
   <style>
@@ -32,8 +35,8 @@
       --gold-soft: rgba(197, 158, 86, .14);
       --shadow: 0 24px 60px rgba(0, 0, 0, .45);
       --success: #B7D7A8;
-      --fd: "Fraunces", Georgia, serif;
-      --fb: "Space Grotesk", system-ui, sans-serif;
+      --fd: "Nunito", "Fraunces", Georgia, serif;
+      --fb: "Nunito", system-ui, sans-serif;
       --fm: "JetBrains Mono", ui-monospace, monospace;
       --serif-heading: var(--fd);
       --sans-heading: var(--fb);
@@ -42,7 +45,7 @@
 
     html[data-mode="editorial"] {
       --fd: "Fraunces", Georgia, serif;
-      --fb: "Space Grotesk", system-ui, sans-serif;
+      --fb: "Fraunces", system-ui, sans-serif;
       --fm: "JetBrains Mono", ui-monospace, monospace;
       --serif-heading: var(--fd);
       --sans-heading: var(--fb);
@@ -87,11 +90,11 @@
       --accent-soft: rgba(67, 119, 80, .12);
       --gold-soft: rgba(184, 168, 131, .14);
       --shadow: 0 24px 60px rgba(35, 53, 36, .12);
-      --fd: "Fraunces", Georgia, serif;
-      --fb: "Fraunces", Georgia, serif;
+      --fd: "Nunito", Georgia, serif;
+      --fb: "Nunito", Georgia, serif;
       --fm: "JetBrains Mono", monospace;
-      --serif-heading: "Fraunces", Georgia, serif;
-      --sans-heading: "Fraunces", Georgia, serif;
+      --serif-heading: "Nunito", system-ui, sans-serif;
+      --sans-heading: "Space Grotesk", system-ui, sans-serif;
       --mono-heading: "JetBrains Mono", monospace;
     }
 
@@ -151,7 +154,7 @@
       position: fixed;
       inset: -12%;
       pointer-events: none;
-      z-index: 0;
+      z-index: -3;
       transition: opacity .4s ease
     }
 
@@ -217,17 +220,17 @@
       }
 
       to {
-        transform: scale(1.03)
+        transform: scale(1.2)
       }
     }
 
     @keyframes zenRain {
       from {
-        transform: translate3d(0, -8%, 0)
+        transform: translate3d(0, -10%, 0)
       }
 
       to {
-        transform: translate3d(10px, 15%, 0)
+        transform: translate3d(12px, 20%, 0)
       }
     }
 
@@ -818,19 +821,19 @@
     }
 
     .manifesto .hl {
-  /* Creates the gradient */
-  background: linear-gradient(90deg, var(--gold-soft), #4800ff); 
-  
-  /* Clips the background to the text shapes */
-  -webkit-background-clip: text;
-  background-clip: text;
-  
-  /* Makes the text transparent so the background shows through */
-  color: transparent;
-  
-  /* Optional: Adds a soft glow effect */
-  text-shadow: 0 0 1px rgba(85, 0, 255, 0.562);
-}
+      /* Creates the gradient */
+      background: linear-gradient(90deg, var(--gold-soft), #4800ff);
+
+      /* Clips the background to the text shapes */
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      /* Makes the text transparent so the background shows through */
+      color: transparent;
+
+      /* Optional: Adds a soft glow effect */
+      text-shadow: 0 0 1px rgba(85, 0, 255, 0.562);
+    }
 
     .manifesto p.in .hl,
     .manifesto.in .hl {
@@ -1685,9 +1688,9 @@
       border: 1px solid var(--border2);
       border-top: 3px solid var(--accent2);
       border-radius: 20px;
-      max-width: 880px;
+      max-width: 920px;
       width: 100%;
-      padding: 44px;
+      padding: 24px;
       position: relative;
       animation: swap .35s ease
     }
@@ -2263,6 +2266,35 @@
         transform: none
       }
 
+    /* Lightbox image styles */
+    .ov-card img.lightbox {
+      width: 100%;
+      height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* Hide Creative Process section if no wand data */
+    #beyond:not([data-wands-loaded="true"]) { display: none; }
+
+    /* Gallery styles for wand cards */
+    .wand-gallery {
+      display: flex;
+      grid-template-columns: repeat(60px 2fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .wand-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
       #curDot,
       #curRing {
         display: none !important
@@ -2287,7 +2319,7 @@
       </div>
       <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">◐</button>
       <a class="btn btn-solid mag"
-        href="mailto:pato.dafoe@outlook.com?subject=Consulting%20inquiry%20%E2%80%94%20dafoe.mx">Book a consult</a>
+        href="mailto:pato.dafoe@icloud.com?subject=Consulting%20inquiry%20%E2%80%94%20dafoe.pro">Book a consult</a>
     </div>
   </nav>
 
@@ -2310,12 +2342,11 @@
             <span class="line"><span class="line-in">made <em id="scrambleWord"
                   data-word="trustworthy.">trustworthy.</em></span></span>
           </h1>
-          <p class="hero-sub">I design AI platforms, design systems and accessible experiences across <b>pharma,
-              logistics and fintech</b> — and consult on ethical AI implementation, design systems, and holistic AI
-            empowerment.</p>
+          <p class="hero-sub">I design accessible AI platforms and design systems across <b>pharma,
+              logistics and fintech</b> consulting on ethical implementation and holistic user empowerment.
           <div class="hero-ctas">
             <a class="btn btn-solid mag"
-              href="mailto:pato.dafoe@outlook.com?subject=Consulting%20inquiry%20%E2%80%94%20dafoe.mx">Book a
+              href="mailto:pato.dafoe@icloud.com?subject=Consulting%20inquiry%20%E2%80%94%20dafoe.pro">Book a
               consult</a>
             <a class="btn mag" href="#work">Open the case files ↓</a>
           </div>
@@ -2356,7 +2387,7 @@
     <!-- CONSULTING -->
     <section class="wrap" id="consulting">
       <div class="sec-head rv"><span class="sec-idx">01</span>
-        <h2>Three ways we work</h2><span class="note">consulting cadence · practical, not abstract</span>
+        <h2>Three ways i can help. you</h2><span class="note">How I Work: Practical, Not Abstract</span>
       </div>
       <div class="tarots">
         <article class="tarot rv">
@@ -2369,7 +2400,7 @@
             <li><b>Priority model</b> for a practical next move</li>
           </ul>
           <div class="foot"><span class="fmt">Discovery · 1–2 wks</span><a class="link-arrow"
-              href="mailto:pato.dafoe@outlook.com?subject=Consulting%20Discovery">Plan <i>→</i></a></div>
+              href="mailto:pato.dafoe@icloud.com?subject=Consulting%20Discovery">Plan <i>→</i></a></div>
         </article>
         <article class="tarot rv">
           <span class="rn">II.</span>
@@ -2381,7 +2412,7 @@
             <li><b>Prototype and test loop</b> to narrow the design</li>
           </ul>
           <div class="foot"><span class="fmt">Prototype · 4–6 wks</span><a class="link-arrow"
-              href="mailto:pato.dafoe@outlook.com?subject=Design%20Systems%20Sprint">Shape <i>→</i></a></div>
+              href="mailto:pato.dafoe@icloud.com?subject=Design%20Systems%20Sprint">Shape <i>→</i></a></div>
         </article>
         <article class="tarot rv">
           <span class="rn">III.</span>
@@ -2393,7 +2424,7 @@
             <li><b>Measurement cadence</b> to learn from outcomes</li>
           </ul>
           <div class="foot"><span class="fmt">Embed · ongoing</span><a class="link-arrow"
-              href="mailto:pato.dafoe@outlook.com?subject=AI%20Enablement">Start <i>→</i></a></div>
+              href="mailto:pato.dafoe@icloud.com?subject=AI%20Enablement">Start <i>→</i></a></div>
         </article>
       </div>
     </section>
@@ -2403,8 +2434,8 @@
       <div class="sec-head rv"><span class="sec-idx">02</span>
         <h2>Case files</h2>
         <div class="lens" role="group" aria-label="Reading lens">
-          <button id="lensExec" aria-pressed="true">Executive</button>
-          <button id="lensPract" aria-pressed="false">Practitioner</button>
+          <button id="lensExec" aria-pressed="true">The Impact</button>
+          <button id="lensPract" aria-pressed="false">The Process</button>
         </div>
       </div>
       <div class="stack" id="stack"></div>
@@ -2426,7 +2457,7 @@
       <div class="artifact-gallery">
         <article class="art rv" data-wand="Workshop">
           <figure><img loading="lazy"
-              src="https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/16878510b-b4c7-4d53-96f8890c953f.png"
+              src="https://i.imgur.com/bxEf6QN.jpeg"
               alt="Hand-crafted wooden magic wands on a workbench"></figure>
           <div class="b">
             <h3>The Workshop</h3>
@@ -2437,54 +2468,24 @@
         </article>
         <article class="art rv" data-wand="Quest">
           <figure><img loading="lazy"
-              src="https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/175c3730f-2995-407a-855e-52a129170206.png"
+              src="https://i.imgur.com/acDchcU.jpeg"
               alt="Archetype Quest cosmic RPG illustration"></figure>
           <div class="b">
-            <h3>Archetype Quest</h3>
-            <p>A gamified habit tracker: pick an archetype, defeat symbolic shadows like Sloth and Harpy, unlock lore
-              and cosmic realms.</p><button class="btn small open-wand" data-wand="quest">Open process</button>
-          </div>
-        </article>
-        <article class="art rv" data-wand="Autism">
-          <figure><img loading="lazy"
-              src="https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/17b7db69f-3011-47b2-9204-fd945f7303bb.png"
-              alt="Gamified ADHD task manager app for kids"></figure>
-          <div class="b">
-            <h3>Giving back through design</h3>
-            <p>Task patterns for auditory and visual concentration, shaped with schools and care teams.</p><button
-              class="btn small open-wand" data-wand="schools">Open process</button>
+            <h3>White-Label 401(k): Accessibility as Architecture</h3>
+            <p>One accessible core, shipped as white-label 401(k) apps for Sony, Samsung, DHL and others.</p><button class="btn small open-quest" data-wand="quest">Open process</button>
           </div>
         </article>
         <article class="art rv" data-wand="Vtt">
           <figure><img loading="lazy"
-              src="https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/175c3730f-2995-407a-855e-52a129170206.png"
+              src="https://i.imgur.com/I07kMCb.jpeg"
               alt="Vampire: The Masquerade VTT table and chronicle map"></figure>
           <div class="b">
             <h3>Vampire: The Masquerade VTT</h3>
             <p>A field-ready tabletop RPG operating system for chronicles, scenes, clues, and social pressure.</p>
             <button class="btn small open-wand" data-wand="vtt">Open process</button>
           </div>
-        </article>   
-        <article class="art rv" data-wand="Research">
-          <figure><img loading="lazy"
-              src="https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/175c3730f-2995-407a-855e-52a129170206.png"
-              alt="Research board with notes and annotations"></figure>
-          <div class="b">
-            <h3>Research Studio</h3>
-            <p>Evidence sessions, synthesis and safe prototypes that make the unknown visible.</p><button
-              class="btn small open-wand" data-wand="research">Open process</button>
-          </div>
         </article>
-        <article class="art rv" data-wand="Workshop">
-          <figure><img loading="lazy"
-              src="https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/16878510b-b4c7-4d53-96f8890c953f.png"
-              alt="Creative workshop table with materials"></figure>
-          <div class="b">
-            <h3>Studio Field Notes</h3>
-            <p>Personal case studies on prototypes, visual systems and careful, useful complexity.</p><button
-              class="btn small open-wand" data-wand="notes">Open process</button>
-          </div>
-        </article>
+
       </div>
     </section>
 
@@ -2574,25 +2575,18 @@
           </div>
         </div>
         <div class="about-txt rv">
-          <p>I’m a design leader who works at the point where decisions get difficult: AI systems, workflows, teams, and
-            product strategy. I read the shapes of a problem, test the constraints, and turn complexity into a set of
-            useful, human options.</p>
-          <p>My work is grounded in research, service design, accessible production systems, and the ethics of
-            intelligent software. I care less about spectacle and more about whether people can understand, trust, and
-            act on a better decision.</p>
-          <p>That has shaped projects across pharma, logistics, fintech, education, and public-interest design. The
-            outcome is usually the same: a more useful interface, a more durable team practice, and a path from
-            confusion to momentum.</p>
+          <p>I’m an end-to-end product designer who steps in when the decisions get heavy. Whether it’s AI systems, complex workflows, or product strategy, I read the shape of a problem, test its constraints, and turn the chaos into clear, human options.</p>
+          <p>My work is grounded in user-centered research, accessible production systems, and the ethics of intelligent software. I care a lot less about visual spectacle and a lot more about whether people can actually understand, trust, and act on the interface in front of them.</p>
+          <p>This approach has shaped projects across pharma, logistics, fintech, education, and public-interest design. The outcome is usually the same: a more useful interface, a more durable team practice, and a clear path from confusion to momentum.</p>
           <div class="postcards">
             <blockquote class="postcard">
-              <p>“He knew how to move a room from signals to a working plan.”</p><cite>— Leadership sponsor</cite>
+              <p>Pato's exceptional UX design skills were instrumental in our supply chain data visualization projects, where he transformed complex logistics information into intuitive interfaces that significantly improved our data completeness metrics.</p><cite>— COO Strata</cite>
             </blockquote>
             <blockquote class="postcard">
-              <p>“The difference was that everyone knew what the system was for.”</p><cite>— Design partner</cite>
+              <p>Irecommend Patricio as a highly skilled and dedicated UX designer. Throughout his time on my team, he consistently impressed me with his deep understanding of UX, user-centered design principles and his ability to deliver intuitiveness in experiences he designed.</p><cite>— Team Leader</cite>
             </blockquote>
             <blockquote class="postcard">
-              <p>“He doesn’t just make things look better; he makes them easier to live with.”</p><cite>— Product team
-                member</cite>
+              <p>I was Patricio’s program manager on a challenging program that was a struggle end to end. His patience and knowledge of UX/UI was a life saver and helped close the project out with satisfied clients. He’s also personable on client calls, which is a huge bonus. </p><cite>— AstraZeneca Leadership</cite>
             </blockquote>
           </div>
         </div>
@@ -2604,16 +2598,14 @@
     <div class="wrap">
       <div class="giant" aria-hidden="true">DAFOE<i>✦</i></div>
       <div class="foot-row">
-        <a href="mailto:pato.dafoe@outlook.com">pato.dafoe@outlook.com</a>
+        <a href="mailto:pato.dafoe@icloud.com">pato.dafoe@icloud.com</a>
         <a href="tel:+527293979174">+52 729 397 9174</a>
         <a href="https://www.linkedin.com/in/patricio-dafoe" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://dafoe.mx" target="_blank" rel="noopener">dafoe.mx</a>
+        <a href="https://dafoe.pro" target="_blank" rel="noopener">dafoe.pro</a>
         <div class="badges"><span>Oxford M.A.</span><span>NN/g UX + AI</span><span>Lighthouse ≥ 95</span><span>axe: 0
             violations</span><span>tokens: Figma Variables → CSS</span></div>
       </div>
-      <p class="foot-note">This site is its own design-system case study · motion explains, never manipulates ·
-        prefers-reduced-motion honored · the designer behind the decisions answers only from a curated, cited fact
-        index.</p>
+      <p class="foot-note">This site serves as a functional case study of my design principles: purposeful animation, full accessibility support, and user first (with some flares).</p>
     </div>
   </footer>
 
@@ -2623,12 +2615,13 @@
     </div>
   </div>
 
-  <a class="docent-btn" id="docentToggle" href="mailto:pato.dafoe@outlook.com?subject=Portfolio%20contact">✦ Send email</a>
+  <a class="docent-btn" id="docentToggle" href="mailto:pato.dafoe@icloud.com?subject=Portfolio%20contact">✦ Send
+    email</a>
 
   <script>
     /* ================= DATA ================= */
     var PROFILE_FALLBACK = "https://i.imgur.com/loaTdb9.jpeg";
-    var IMG = { az: "https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/11b3f1522-1818-4aca-9853-96f8890c953f.png", strata: "https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/1b3392039-0519-414c-95cb-9148969c2396.png", credi: "https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/1fa18064b-f2bd-45ee-91f2-191ce322dbf3.png", k401: "https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/1c0cea948-4a3a-49c3-92c5-c7c70f14ded5.png" };
+    var IMG = { az: "https://i.imgur.com/Qa8sEg1.jpeg", strata: "https://i.imgur.com/iYWvUpn.jpeg", credi: "https://i.imgur.com/2QxaNVO.jpeg", k402: "https://i.imgur.com/4cJuujv.jpeg" };
     var CASES = [
       {
         id: "az", kicker: "Pharma AI · 2020–2022", title: "AZ-Brain: One AI, Two Lenses", img: IMG.az, alt: "Dual-panel pharma AI dashboard with neumorphic gauges and sales analytics", wm: "01",
@@ -2636,63 +2629,116 @@
         exec: ["+42% medication-success interactions (ROI-driven)", "One platform serving clinicians and sales", "Tactile, calm support for high-stakes decisions"],
         pract: ["Dual-audience IA: clinician workflow vs. analytics view", "Neumorphic “medicine drawer” with embossed AI gauges", "Validated via A/B tests, cognitive & heuristic evaluations"],
         tags: ["Dual-audience IA", "Neumorphism", "Design system", "A/B + heuristics"],
-        problem: "Clinicians needed tactile, trustworthy decision support; sales needed sharp analytics. Both were drowning in legacy SAP/Power BI tools.",
-        decisions: ["Designed a “medicine drawer” with embossed gauges so AI medication evaluations feel tactile under pressure.", "Split the IA by audience: workflow efficiency for clinicians, color-coded KPIs and real-time maps for sales.", "Built a custom design system so both views share tokens, states and accessibility rules."],
-        evidence: [{ claim: "+42% medication-success interactions", src: "A/B report · AZ-Brain oncology rollout, 2021", conf: "0.92" }, { claim: "Operational efficiency up in daily use", src: "Cognitive & heuristic evaluations · GreyMatter, 2022", conf: "0.85" }],
-        outcomes: "A single AI platform balancing security with welcome — tactile where stakes are clinical, sharp where they’re commercial.",
-        again: "Start from trust patterns per audience, not from screens.", change: "Earlier co-design with field sales would have shortened the analytics loop."
+        problem: "Bridging the gap between clinical precision and commercial agility, requiring a unified platform that serves both high-stakes patient care and high-density sales analytics.",
+  decisions: [
+    "Designed a Dual-Mode Architecture with a neomorphic Clinical Mode to reduce cognitive load and a data-dense Commercial Mode for real-time KPIs.",
+    "Implemented secure 'Confirm/Dismiss' AI confirmation loops to ensure a human-in-the-loop for critical medical decisions.",
+    "Created a Unified Design System that scales from a tactile, welcoming clinical interface to an enterprise-grade analytics dashboard."
+  ],
+  evidence: [
+    { claim: "Validated via A/B Testing, Heuristic Reports, and Cognitive Load Analysis", src: "ISO 9241-110 Compliance Testing", conf: "1.0" },
+    { claim: "Successfully unified clinical safety with commercial speed in a single ecosystem", src: "AstraZeneca Collaboration", conf: "1.0" }
+  ],
+  outcomes: "Delivered a platform where AI augments doctor workflows without disrupting focus, while providing sales teams with real-time enterprise-grade analytics.",
+  again: "If the user doesn't understand why the AI made a choice, the design has failed",
+  change: "Design for the extremes of cognitive load: high-stakes focus vs. high-density analytics, and validate with real users in both contexts.",
+  internalImages: [
+    { src: "https://i.imgur.com/Qa8sEg1.jpeg", caption: "Option 1: Dual-panel layout with clinical view" },
+    { src: "https://i.imgur.com/jw946yy.png", caption: "Option 2: Commercial analytics view" }
+  ]
       },
       {
-        id: "strata", kicker: "Logistics AI · 2023–Present", title: "Auba → Strata: From Seeing to Deciding", img: IMG.strata, alt: "Dark logistics dashboard with shipment cards, world map and AI reasoning panel", wm: "02",
-        one: "A logistics AI that fuses beyond-GPS sources to see cargo, then explains every decision with sources and confidence.",
+        id: "strata", kicker: "Logistics AI · 2023–2025", title: "Strata AI Logistics Platform", img: IMG.strata, alt: "Dark logistics dashboard with shipment cards, world map and AI reasoning panel", wm: "02",
+        one: "Transformed logistics operations from passive monitoring to active problem-solving by developing an AI companion system that fuses beyond-GPS data sources to predict cargo issues before they occur.",
         exec: ["Proactive flags (e.g., missing Bill of Lading) surface in-flow", "Every AI decision ships with sources & confidence scores", "Alerts fire only in high-risk states — noise down, trust up"],
         pract: ["Multi-source fusion: cameras, satellite, social, shipping feeds", "Documents drawer resolves discrepancies without context-switching", "Reroute simulation + port data agent replace OCR and manual entry"],
         tags: ["Explainability", "Multi-source AI", "Reroute sim", "Cross-device"],
-        problem: "Conventional tracking leans on sparse GPS pings and fragmented documents — delays, inaccuracies, and operators juggling six tools to fix one discrepancy.",
-        decisions: ["Synthesized unconventional signals (public cameras, satellite imagery, social) into a proactive, real-time cargo view.", "Moved document resolution inside shipment details so fixes happen where problems are flagged.", "Added an explainability rail: confidence scores, linked sources, downloadable decision logic — hallucinations caught before they ship."],
-        evidence: [{ claim: "Operators resolved discrepancies without leaving the dashboard", src: "Moderated prototype testing · Destela, 2024", conf: "0.80" }, { claim: "Route-optimization confidence 94.7% in live pilot", src: "TMS v4.3 logs · customs API", conf: "0.95" }],
-        outcomes: "Logistics shifts from passive monitoring to active problem-solving — routine decisions automated, exceptions explained.",
-        again: "Explainability isn’t a feature; it’s the interface.", change: "Instrument alert-precision metrics from day one."
+        problem: "Conventional tracking relied on sparse GPS pings and fragmented documents. Operators were juggling six different tools just to fix a single discrepancy, leading to constant delays and inaccuracies.",
+  decisions: [
+    "Built an Explainable AI Interface with a 'Why?' button, confidence scoring, and guardrails against hallucinations.",
+    "Designed Risk-Based Action Surfacing to reduce operational noise, showing actions only during risk states.",
+    "Integrated unconventional signals (public cameras, satellite imagery) and live port data via API to bypass manual entry."
+  ],
+  evidence: [
+    { claim: "Zero context-switching:", src: "Moderated prototype testing · Destela, 2024", conf: "1.0" },
+    { claim: "Route-optimization confidence 94.7% in live pilot", src: "TMS v4.3 logs · customs API", conf: "0.947" }
+  ],
+  outcomes: "Shifted from reactive to proactive logistics management, reducing tool fragmentation and automating routine decisions while explaining exceptions.",
+  again: "Explainability isn't a feature—it's the interface.",
+  change: "Instrument alert-precision metrics from day one.",
+  internalImages: [
+    { src: "https://i.imgur.com/hY6yV5z.jpeg", caption: "Option 1: Shipment tracking interface" },
+    { src: "https://i.imgur.com/m8x0sT6.jpeg", caption: "Option 2: Light & Dark mode" }
+  ]
       },
       {
-        id: "credi", kicker: "Fintech · 2018–2020", title: "Crediverso: The Redesign That Converted", img: IMG.credi, alt: "Fintech mobile app screens with balance cards and quick actions", wm: "03",
+        id: "credi", kicker: "Fintech · 2018–2020", title: "Crediverso: A Telemundo App", img: IMG.credi, alt: "Fintech mobile app screens with balance cards and quick actions", wm: "03",
         one: "A UX redesign and atomic component library for Telemundo’s fintech — conversion followed.",
         exec: ["+60% conversion in 3 months", "Faster feature shipping via reusable components", "A glanceable money mental model"],
         pract: ["Atomic component library, each component solving one UI problem", "Quick-actions pattern: transfer, pay, recharge", "Balance & scheduled payments redesigned for scannability"],
         tags: ["Atomic design", "Conversion UX", "Components"],
-        problem: "A leaky fintech flow — dense screens, buried actions, no component language to speak of.",
-        decisions: ["Rebuilt the experience on an atomic component library, designed and coded per UI problem.", "Promoted quick actions (transfer / pay / recharge) to primary UI.", "Redesigned balance and scheduled payments for one-glance comprehension."],
-        evidence: [{ claim: "+60% conversion in 3 months", src: "Product analytics · Crediverso, 2019", conf: "0.95" }],
-        outcomes: "Design stopped being decoration and became the growth lever.",
-        again: "Componentize before you optimize.", change: "Usability-test the recharge flow one round earlier."
-      },
+        problem: "An outdated design and lack of trust created a leaky funnel, with dense screens and buried actions failing to connect with the target Latino audience.",
+  decisions: [
+    "Rebuilt the experience from the ground up with an atomic component library to ensure consistency and reliability.",
+    "Elevated key quick actions (transfer, pay, recharge) to the primary UI to streamline the user journey.",
+    "Redesigned balance and scheduled payments for one-glance comprehension to reduce cognitive load."
+  ],
+  evidence: [
+    { claim: "Conversion increase of 60% in 3 months", src: "Product Analytics · Crediverso, 2019", conf: "0.95" }
+  ],
+  outcomes: "Design became the primary growth lever, proving that trust and cultural relevance are key to conversion.",
+  again: "Componentize before you optimize.",
+  change: "Usability-test the recharge flow one round earlier to catch potential friction points sooner.",
+  internalImages: [
+    { src: "https://i.imgur.com/2QxaNVO.jpeg", caption: "Option 1: Balance screen redesign" },
+  ]
+},
       {
-        id: "k401", kicker: "Financial accessibility · 2016–2018", title: "White-Label 401(k): Accessibility as Architecture", img: IMG.k401, alt: "Accessible retirement savings web app with high-contrast chart", wm: "04",
-        one: "One accessible core, shipped as white-label 401(k) apps for Sony, Samsung and DHL.",
-        exec: ["Shipped for Sony, Samsung and DHL from a single core", "Zero accessibility blockers at launch", "Set the UI/UX standard for the financial apps team"],
-        pract: ["WCAG AA/AAA baked into every theme: light, dark, high-contrast", "Semantic markup + screen-reader testing per release", "Token-driven theming for brand variants"],
-        tags: ["WCAG AA/AAA", "Token theming", "White-label"],
-        problem: "Multiple brands, one compliance bar: retirement apps that had to be accessible everywhere, for everyone, without forking the codebase.",
-        decisions: ["Made accessibility a property of the token system, not a per-screen fix.", "Ran screen-reader and contrast testing as part of every release.", "Documented usage guidelines so every theme inherited the same rules."],
-        evidence: [{ claim: "WCAG AA compliance across all brand themes", src: "Accessibility audits · Strive, 2017", conf: "0.97" }, { claim: "Shipped for Sony, Samsung, DHL", src: "Release notes · Strive", conf: "1.00" }],
-        outcomes: "Accessibility stopped being a ticket and became the architecture.",
-        again: "Bake WCAG into tokens, not screens.", change: "Add high-contrast mode user testing sooner."
+        id: "k402", kicker: "Gamified Self-Improvement · Present", title: "Archetype Quest: RPG Habit Tracking", img: IMG.k402, alt: "Surrealist cosmic realm interface showing archetype selection and shadow battles", wm: "05",
+        one: "Transforms daily habit tracking into an epic RPG adventure where users battle personal demons as chosen archetypes.",
+        exec: [
+          "Users select a permanent archetype (Warrior, Creator, Sage, etc.)",
+          "Real-life tasks defeat symbolic 'shadows' like Procrastination Sloth",
+          "Victories unlock lore, abilities, and surreal cosmic realms"
+        ],
+        pract: [
+          "Archetype-based progression system",
+          "Symbolic enemy design mapping to common behavioral hurdles",
+          "Surrealist visual rewards for habit completion"
+        ],
+        tags: ["Gamification", "RPG", "Habit Tracking", "Self-Improvement"],
+        problem: "Traditional habit trackers lack emotional engagement and narrative depth, leading to high user drop-off.",
+        decisions: [
+          "Mapped psychological barriers to mythological 'shadow' enemies",
+          "Used archetype selection to personalize the user journey",
+          "Designed surreal rewards to reinforce the fantasy of transformation"
+        ],
+        evidence: [
+          { claim: "Archetype selection drives user engagement", src: "Concept Design · Archetype Quest", conf: "0.95" },
+          { claim: "Shadow battles map to real-world tasks", src: "Product Overview · Archetype Quest", conf: "1.00" }
+        ],
+        outcomes: "Self-improvement becomes an immersive narrative rather than a checklist.",
+        again: "Anchor mechanics in psychological archetypes, not just points.", change: "Expand shadow variety to cover more nuanced emotional states.",
+        internalImages: [
+          { src: "https://i.imgur.com/cMYiWvc.jpeg", caption: "Dashboard" },
+          { src: "https://i.imgur.com/VfrnwaS.jpeg", caption: "All Cards" }
+        ]
       }];
     var SHELVES = [
       {
         name: "AI, Examined", items: [
-          { t: "Why Your AI Can’t Catch a Ball (And Why That Should Worry You)", teaser: "LLMs have read millions of books about gravity yet can’t predict a dropped glass. Foundation world models — systems that learn by observing the physical world — are the pivot, and why everyone shipping AI products should care." },
-          { t: "Why Startups Are Building Castles in the Cloud with AI Automation — And Why We Need a New Paradigm", teaser: "Building on rented intelligence is building on rented ground. A case for owning your patterns, not just your prompts." }]
+          { t: "Why Your AI Can’t Catch a Ball (And Why That Should Worry You)", teaser: "For the past decade, artificial intelligence has been dominated by a single approach: feed machines enormous amounts of text, and they’ll learn to understand the world. This strategy gave us Large Language Models (LLMs) that can write, reason, and converse with impressive fluency. But there’s a problem. These models have read millions of books about gravity, yet they can’t predict what happens when you drop a glass." },
+          { t: "Why Startups Are Building Castles in the Cloud with AI Automation", teaser: "After seeing AI automation overpromise and underdeliver across multiple industries, I wanted to explore the real limitations — and propose a better path forward." }]
       },
       {
         name: "Design, Argued", items: [
-          { t: "Liquid Glass: A Departure from Jobs’ Design Philosophy or Evolution of Apple’s Vision?", teaser: "Reading Apple’s new material language against two decades of its own design doctrine." },
-          { t: "Data Visualization Through the Designer’s Lens: From Excel Tabs to AI-Enhanced Dashboards", teaser: "From spreadsheet tabs to AI-augmented decision surfaces — the dashboard’s journey, and the designer’s job in between. Companion piece to the AZ-Brain and Auba case files." }]
+          { t: "From Jobs to Cook: Has Apple Lost Its Design Soul?", teaser: "Apple’s design legacy is often framed as a tale of two leaders. Steve Jobs, the visionary founder, believed that technology should feel like magic. Tim Cook, his successor, believes in precision, scale, and operational excellence. Both philosophies have shaped Apple’s products, but they have led to very different emotional outcomes." },
+          { t: "Data Visualization Through the Designer’s Lens", teaser: "As a product designer, I’ve spent much of my career at the crossroads of data and decision-making. I’ve watched dashboards evolve from humble, color-tabbed spreadsheets in Excel to today’s AI-enhanced, context-aware visualizations powered by large language models. Each leap in technology hasn’t just changed our tools — it’s transformed the way we see, interpret, and act on information." }]
       },
       {
         name: "Human + Machine", items: [
-          { t: "Artificial Intelligence and the Evolution of Human Creativity", teaser: "AI as creative sparring partner: what changes when the tool starts making suggestions?" },
-          { t: "Leveraging AI and Human Creativity: Unofficial ‘Lives of the Mayfair Witches’ Character Bios", teaser: "A playful experiment in co-writing character bios — human canon meets machine imagination." }]
+          { t: "Artificial Intelligence and the Evolution of Human Creativity.", teaser: "I’ve spent years in art schools and design studios, watching people panic over new tools. Generative AI? It’s just the latest chapter in a very old story. Critics call it “theft” and “the end of art,” but they said the same thing about photography in 1839." },
+          { t: "The Iron Horse of Intelligence", teaser: "History is rhyming, and Silicon Valley is humming the same tune. We’re watching a frenzied investment cycle unfold around generative AI, a breakthrough that genuinely promises to reshape economics." }]
       }];
     var FACTS = [
       { k: ["42", "astrazeneca", "az-brain", "az brain", "pharma", "oncology"], a: "At AstraZeneca, the AZ-Brain redesign increased medication-success interactions by 42% — an ROI-driven redesign of SAP/Power BI tools into a dual-audience AI platform.", s: "Resume · AZ-Brain A/B report (2021)", c: "0.92" },
@@ -2700,12 +2746,12 @@
       { k: ["strata", "auba", "logistics", "shipment", "cargo", "tracking"], a: "Auba fuses beyond-GPS sources (cameras, satellite, social) into proactive cargo tracking; Strata adds an explainable companion with sources, confidence scores and high-risk-only alerts.", s: "Case file · Destela, 2023–present", c: "0.90" },
       { k: ["wcag", "accessibility", "401", "sony", "samsung", "dhl", "retirement"], a: "At Strive, Patricio built white-label 401(k) apps for Sony, Samsung and DHL with WCAG AA/AAA baked into every theme — light, dark and high-contrast.", s: "Resume · accessibility audits (2017)", c: "0.97" },
       { k: ["hololens", "ar", "vr", "mixed reality", "augmented"], a: "At the VR/AR Association he created an AR design system — icons and animations — that was adopted by HoloLens.", s: "Resume · 2016–2017", c: "0.95" },
-      { k: ["wand", "magic", "workshop", "craft", "wood"], a: "Off-hours, Patricio hand-crafts artisanal magic wands. House rule: magic is power, ethics is responsibility — and every consulting engagement ends with a wand.", s: "The Workshop · dafoe.mx", c: "1.00" },
+      { k: ["wand", "magic", "workshop", "craft", "wood"], a: "Off-hours, Patricio hand-crafts artisanal magic wands. House rule: magic is power, ethics is responsibility — and every consulting engagement ends with a wand.", s: "The Workshop · dafoe.pro", c: "1.00" },
       { k: ["archetype", "quest", "rpg", "game", "habit", "adhd"], a: "Archetype Quest turns habit-building into an RPG: pick an archetype, defeat symbolic shadows, unlock lore. The same mechanics power a pro-bono ADHD task manager built with schools.", s: "Beyond the day job", c: "0.90" },
       { k: ["ethic", "bias", "responsible", "explainab", "trust"], a: "The practice: explainable AI patterns, bias mitigation and adaptive UIs — plus a motion spec where nothing moves unless it explains. NN/g UX+AI certified (2024).", s: "Skill card · certifications", c: "0.90" },
       { k: ["workshop", "mentor", "teach", "train", "squad"], a: "25+ workshops on inclusive design, ethical AI and accessibility; 10+ designers mentored from junior to lead; “intelligence squads” pairing designers with data scientists.", s: "This-is-me deck", c: "0.95" },
       { k: ["design system", "token", "component", "figma", "storybook"], a: "He builds token libraries with semantic naming, component libraries in Figma + Storybook, and governance with changelogs and cross-team sign-off — WCAG baked into every theme.", s: "Skill card", c: "0.95" },
-      { k: ["contact", "book", "hire", "email", "consult", "phone"], a: "Fastest route: pato.dafoe@outlook.com, or the “Book a consult” button up top. LinkedIn works too.", s: "Footer", c: "1.00" }];
+      { k: ["contact", "book", "hire", "email", "consult", "phone"], a: "Fastest route: pato.dafoe@icloud.com, or the “Book a consult” button up top. LinkedIn works too.", s: "Footer", c: "1.00" }];
 
     /* ================= UTIL ================= */
     function qs(s, r) { return (r || document).querySelector(s) }
@@ -2928,7 +2974,7 @@
           '<ul data-lens="pract" class="pract-list"><li data-lens="pract">' + (c.solution || '') + '</li><li data-lens="pract">' + (c.role || '') + '</li><li data-lens="pract">' + (c.impact || '') + '</li></ul></div>' +
           '<div class="tags"><span>' + (c.role || 'Design') + '</span><span>AI</span><span>Systems</span></div>' +
           '<div class="cc-cta"><button class="btn btn-solid mag" data-case="' + (c.title || 'case') + '">Open case file →</button>' +
-          '<a class="link-arrow" href="mailto:pato.dafoe@outlook.com?subject=About%20' + encodeURIComponent(c.title) + '">Discuss <i>→</i></a></div></div>' +
+          '<a class="link-arrow" href="mailto:pato.dafoe@icloud.com?subject=About%20' + encodeURIComponent(c.title) + '">Discuss <i>→</i></a></div></div>' +
           '<div class="cc-right"><img loading="lazy" src="' + (c.image || PROFILE_FALLBACK) + '" alt="' + (c.title || 'Case study') + '"><span class="wm">' + String(i + 1).padStart(2, '0') + '</span></div></article>';
       }).join("");
       setLens('exec');
@@ -2943,7 +2989,7 @@
         '<ul data-lens="pract">' + c.pract.map(function (b) { return "<li>" + b + "</li>" }).join("") + '</ul></div>' +
         '<div class="tags">' + c.tags.map(function (t) { return "<span>" + t + "</span>" }).join("") + '</div>' +
         '<div class="cc-cta"><button class="btn btn-solid mag" data-case="' + c.id + '">Open case file →</button>' +
-        '<a class="link-arrow" href="mailto:pato.dafoe@outlook.com?subject=About%20' + encodeURIComponent(c.title) + '">Discuss <i>→</i></a></div></div>' +
+        '<a class="link-arrow" href="mailto:pato.dafoe@icloud.com?subject=About%20' + encodeURIComponent(c.title) + '">Discuss <i>→</i></a></div></div>' +
         '<div class="cc-right"><img loading="lazy" src="' + c.img + '" alt="' + c.alt + '"><span class="wm">' + c.wm + '</span></div></article>';
     }).join("");
     function setLens(l) {
@@ -2975,22 +3021,77 @@
 
     /* ================= WAND MODAL ================= */
     const WAND_DATA = [
-      { key: 'workflow', title: 'The Workshop', image: 'https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/16878510b-b4c7-4d53-96f8890c953f.png', bullets: ['Concept: translate an awkward ambiguity into a useful object story.', 'Materials: wood, polish, brass, hand-finished surfaces.', 'Time: 4 sessions from sketch to craft.'] },
-      { key: 'quest', title: 'Archetype Quest', image: 'https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/175c3730f-2995-407a-855e-52a129170206.png', bullets: ['Concept: convert habit loops into symbolic play.', 'Materials: game logic, behavior map, campaign visuals.', 'Time: 2 weeks of rapid prototype tests.'] },
-      { key: 'schools', title: 'Giving Back Through Design', image: 'https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/17b7db69f-3011-47b2-9204-fd945f7303bb.png', bullets: ['Concept: support sensory clarity and task momentum.', 'Materials: classroom research, visual systems, task patterns.', 'Time: summer research + iteration cycle.'] },
-      { key: 'systems', title: 'Design Systems Library', image: 'https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/17b7db69f-3011-47b2-9204-fd945f7303bb.png', bullets: ['Concept: make language, UI, and decisions reusable.', 'Materials: tokens, Figma libraries, service patterns.', 'Time: multi-sprint enablement model.'] },
-      { key: 'research', title: 'Research Studio', image: 'https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/175c3730f-2995-407a-855e-52a129170206.png', bullets: ['Concept: surface evidence before design commitments.', 'Materials: interview guides, synthesis boards, prototypes.', 'Time: 1 week of field learning.'] },
-      { key: 'vtt', title: 'Vampire: The Masquerade VTT', image: 'https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/175c3730f-2995-407a-855e-52a129170206.png', bullets: ['Concept: turn a social intrigue system into a playable tabletop map.', 'Materials: city web, scene matrix, player pressure, chronicle artifacts.', 'Time: system design, worldbuilding, and companion prompt layer.'] },
-      { key: 'notes', title: 'Studio Field Notes', image: 'https://image.qwenlm.ai/public_source/77c58a1f-359c-410c-be18-70f2f825c79a/16878510b-b4c7-4d53-96f8890c953f.png', bullets: ['Concept: record the thinking behind a good solution.', 'Materials: sketches, artifacts, annotation layers.', 'Time: 1–2 days per reflection cycle.'] }
-    ];
-    function openWandModal(key) {
-      const wand = WAND_DATA.find(x => x.key === key) || WAND_DATA[0];
-      openOverlay('<span class="sec-idx mono" style="font-size:11px;letter-spacing:.2em;color:var(--accent2)">CREATIVE PROCESS · WAND STUDY</span><h3>' + wand.title + '</h3><img class="ov-hero" src="' + wand.image + '" alt="' + wand.title + '"><p class="ov-sec">Process</p><ul>' + wand.bullets.map(b => '<li>' + b + '</li>').join('') + '</ul><p style="margin-top:26px"><a class="btn btn-solid" href="#beyond">More creative work →</a></p>');
+          { key: 'workflow', title: 'The Workshop', images: [
+              { src: 'https://i.imgur.com/1zzLf90.jpeg', caption: 'Hand-crafted wooden magic wand' },
+              { src: 'https://i.imgur.com/bxEf6QN.jpeg', caption: 'The Draw' },
+              { src: 'https://i.imgur.com/zKnAHeP.jpeg', caption: 'Wand resting' }
+            ], bullets: ['Concept: translate an awkward ambiguity into a useful object story.', 'Materials: wood, polish, brass, hand-finished surfaces.', 'Time: 4 sessions from sketch to craft.'] },
+          { key: 'quest', title: 'Archetype Quest', images: [
+              { src: 'https://i.imgur.com/acDchcU.jpeg', caption: 'Desktop Dashboard' },
+              { src: 'https://i.imgur.com/MmHOrOZ.png', caption: 'Mobile Dashboard' },
+            ], bullets: ['Shipped for Sony, Samsung and DHL from a single core', 'Token-driven theming for brand variants', 'Set the UI/UX standard for the financial apps team'] },
+          { key: 'schools', title: 'Giving Back Through Design', images: [
+              { src: 'https://i.imgur.com/1zzLf90.jpeg', caption: 'Gamified ADHD task manager app for kids' },
+              { src: 'https://i.imgur.com/bxEf6QN.jpeg', caption: 'Classroom research and visual systems' },
+              { src: 'https://i.imgur.com/zKnAHeP.jpeg', caption: 'Task patterns for auditory and visual concentration' }
+            ], bullets: ['Concept: support sensory clarity and task momentum.', 'Materials: classroom research, visual systems, task patterns.', 'Time: summer research + iteration cycle.'] },
+          { key: 'vtt', title: 'Vampire: The Masquerade VTT', images: [
+              { src: 'https://i.imgur.com/I07kMCb.jpeg', caption: 'Vampire: The Masquerade VTT table and chronicle map' },
+            ], bullets: ['Concept: turn a social intrigue system into a playable tabletop map.', 'Materials: city web, scene matrix, player pressure, chronicle artifacts.', 'Time: system design, worldbuilding, and companion prompt layer.'] },
+          { key: 'notes', title: 'Studio Field Notes', images: [
+              { src: 'https://i.imgur.com/1zzLf90.jpeg', caption: 'Creative workshop table with materials' },
+              { src: 'https://i.imgur.com/bxEf6QN.jpeg', caption: 'Sketches and artifacts from prototyping' },
+              { src: 'https://i.imgur.com/zKnAHeP.jpeg', caption: 'Annotation layers and visual systems' }
+            ], bullets: ['Concept: record the thinking behind a good solution.', 'Materials: sketches, artifacts, annotation layers.', 'Time: 1–2 days per reflection cycle.'] }
+        ];
+        function openWandModal(key) {
+          const wand = WAND_DATA.find(x => x.key === key);
+          if (!wand) {
+            return;
+          }
+          // 1. Extract the first image
+const firstImageHtml = (wand.images && wand.images.length > 0) 
+  ? `<figure><img loading="lazy" src="${wand.images[0].src}" alt="${wand.images[0].caption}"><figcaption>${wand.images[0].caption}</figcaption></figure>` 
+  : '';
+
+// 2. Slice out the rest of the images for the gallery
+const remainingImagesHtml = (wand.images && wand.images.length > 1) 
+  ? `<div class="wand-gallery">
+      ${wand.images.slice(1).map(img => `<figure><img loading="lazy" src="${img.src}" alt="${img.caption}"><figcaption>${img.caption}</figcaption></figure>`).join('')}
+     </div>` 
+  : '';
+
+// 3. Format the bullets
+const bulletsHtml = wand.bullets 
+  ? `<ul>${wand.bullets.map(b => `<li>${b}</li>`).join('')}</ul>` 
+  : '';
+
+// 4. Assemble the overlay in the correct order
+openOverlay(`
+  <span class="sec-idx mono" style="font-size:11px;letter-spacing:.2em;color:var(--accent2)">CREATIVE PROCESS · WAND STUDY</span>
+  <h3>${wand.title}</h3>
+  ${firstImageHtml}
+  <p class="ov-sec">Process</p>
+  ${bulletsHtml}
+  ${remainingImagesHtml}
+  <p style="margin-top:26px"><a class="btn btn-solid" href="#beyond">More creative work →</a></p>
+`);
+        }
+    function openCaseImageLightbox(imgSrc, altText) {
+      openOverlay('<img class="lightbox" src="' + imgSrc + '" alt="' + altText + '">');
     }
+    
     document.addEventListener('click', function (e) {
       if (e.target.closest('[data-wand]')) {
         const key = e.target.closest('[data-wand]').getAttribute('data-wand');
         if (key) openWandModal(key);
+      }
+      
+      // Handle case card image clicks for lightbox
+      const caseImg = e.target.closest('.case-card .cc-right img');
+      if (caseImg) {
+        e.preventDefault();
+        openCaseImageLightbox(caseImg.src, caseImg.alt);
       }
     });
 
@@ -3022,15 +3123,16 @@
           '<p class="ov-sec">Decisions that mattered</p><ul>' + c.decisions.map(function (d) { return "<li>" + d + "</li>" }).join("") + '</ul>' +
           '<p class="ov-sec">Evidence rail · cited & scored</p>' + c.evidence.map(function (ev) { return '<div class="ev-row"><span class="claim">' + ev.claim + '</span><span class="src">Source: ' + ev.src + '</span><span class="conf">conf ' + ev.conf + '</span></div>' }).join("") +
           '<p class="ov-sec">Outcome</p><p>' + c.outcomes + '</p>' +
-          '<p class="ov-sec">Repeat / change</p><p><b style="color:var(--ink)">Repeat:</b> ' + c.again + ' &nbsp; <b style="color:var(--ink)">Change:</b> ' + c.change + '</p>' +
-          '<p style="margin-top:26px"><a class="btn btn-solid" href="mailto:pato.dafoe@outlook.com?subject=About%20' + encodeURIComponent(c.title) + '">Discuss this case →</a></p>'); return;
+          '<p class="ov-sec">What to repeat / What to change</p><p><b style="color:var(--ink)">Repeat:</b> ' + c.again + ' &nbsp; <b style="color:var(--ink)">Change:</b> ' + c.change + '</p>' +
+          (c.internalImages && c.internalImages.length > 0 ? '<p class="ov-sec">Internal Views</p><div class="internal-images">' + c.internalImages.map(function (img, index) { return '<div class="internal-image"><p><strong>Option ' + (index + 1) + ':</strong> ' + img.caption + '</p><img src="' + img.src + '" alt="' + img.caption + '"></div>' }).join('') + '</div>' : '') +
+          '<p style="margin-top:26px"><a class="btn btn-solid" href="mailto:pato.dafoe@icloud.com?subject=About%20' + encodeURIComponent(c.title) + '">Discuss this case →</a></p>'); return;
       }
       var ab = e.target.closest("[data-shelf]");
       if (ab) {
         var sh = SHELVES[+ab.getAttribute("data-shelf")], it = sh.items[+ab.getAttribute("data-item")];
         openOverlay('<span class="sec-idx mono" style="font-size:11px;letter-spacing:.2em;color:var(--accent2)">ESSAY · ' + sh.name.toUpperCase() + '</span><h3>' + it.t + '</h3><p style="margin-top:14px">' + it.teaser + '</p>' +
-          '<p style="margin-top:18px;font-family:var(--fm);font-size:11px;color:var(--muted)">Full essay on Medium & LinkedIn — canonical copy lands on dafoe.mx at launch.</p>' +
-          '<p style="margin-top:26px"><a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/in/patricio-dafoe">Discuss on LinkedIn →</a></p>');
+          '<p style="margin-top:18px;font-family:var(--fm);font-size:11px;color:var(--muted)">Full essay on Medium & LinkedIn — canonical copy lands on dafoe.pro at launch.</p>' +
+          '<p style="margin-top:26px"><a class="btn" target="_blank" rel="noopener" href="https://medium.com/@pato.dafoe">Read on Medium →</a></p>');
       }
     });
 
@@ -3039,7 +3141,7 @@
     if (dToggle) {
       dToggle.addEventListener("click", function (e) {
         e.preventDefault();
-        window.location.href = "mailto:pato.dafoe@outlook.com?subject=Portfolio%20contact";
+        window.location.href = "mailto:pato.dafoe@icloud.com?subject=Portfolio%20contact";
       });
     }
   </script>
